@@ -12,6 +12,11 @@ use Swagger\Annotations as SWG;
  */
 class AuthenticationController extends AbstractApiController
 {
+    public function authenticateAction()
+    {
+
+    }
+
     /**
      * User logout.
      *
