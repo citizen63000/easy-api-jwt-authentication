@@ -1,0 +1,41 @@
+{
+  "name": "citizen63000/easy-api-jwt-authentication",
+  "description": "Complete API bundle to create easily your API",
+  "keywords": ["api", "rest"],
+  "type": "symfony-bundle",
+  "authors": [
+    {
+      "name": "citizen63000"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/citizen63000/easy-api-bundle.git"
+    }
+  ],
+  "require": {
+    "php": ">=7.4.3",
+    "citizen63000/easy-api-bundle": "dev-sf4",
+    "gesdinet/jwt-refresh-token-bundle": "^0.7"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "@stable",
+    "guzzlehttp/psr7": "^1.3",
+    "php-http/guzzle6-adapter": "^1.1",
+    "symfony/phpunit-bridge": "^3.0",
+    "phpunit/phpunit": "6.*"
+  },
+  "config": {
+    "discard-changes": true,
+    "platform": {
+      "php": "7.4.3"
+    },
+    "sort-packages": true
+  },
+  "autoload": {
+    "psr-4": {
+      "EasyApiJwtAuthentication\\": ""
+    }
+  }
+}
