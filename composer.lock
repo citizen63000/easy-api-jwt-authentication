@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ad0cd848387fdaa7cddc24887494bce0",
+    "content-hash": "cb7cc6a5a8c200056e286e766d6f5140",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -109,11 +109,11 @@
         },
         {
             "name": "citizen63000/easy-api-bundle",
-            "version": "dev-sf4",
+            "version": "dev-sf4_idp",
             "source": {
                 "type": "git",
                 "url": "https://github.com/citizen63000/easy-api-bundle.git",
-                "reference": "df604da9e03dba24c0a2c5f0da837ce08179e4dc"
+                "reference": "69c0c02795079cb37075ecf0d82ea7a4255bf42a"
             },
             "require": {
                 "doctrine/doctrine-bundle": "^1.10",
@@ -165,7 +165,7 @@
                 "api",
                 "rest"
             ],
-            "time": "2021-10-17T08:42:03+00:00"
+            "time": "2021-10-17T11:43:36+00:00"
         },
         {
             "name": "clue/stream-filter",
