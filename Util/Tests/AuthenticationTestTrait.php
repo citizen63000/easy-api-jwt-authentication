@@ -9,7 +9,7 @@ trait AuthenticationTestTrait
 {
     use AuthenticationTestFunctionsTrait;
 
-    protected static $authenticateRouteName = 'fos_user_security_check';
+    protected static $authenticateRouteName = 'api_login';
     protected static $refreshTokenRouteName = 'gesdinet_jwt_refresh_token';
     protected static $logoutRouteName = 'api_logout';
 
