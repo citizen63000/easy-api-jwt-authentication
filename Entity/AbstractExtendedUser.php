@@ -3,10 +3,10 @@
 namespace EasyApiJwtAuthentication\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use EasyApiBundle\Entity\User\AbstractBaseUser;
+use EasyApiBundle\Entity\User\AbstractUser;
 use Symfony\Component\Security\Core\Encoder\EncoderAwareInterface;
 
-abstract class AbstractExtendedUser extends AbstractBaseUser implements EncoderAwareInterface
+abstract class AbstractExtendedUser extends AbstractUser implements EncoderAwareInterface
 {
     /**
      * @var string
@@ -15,10 +15,10 @@ abstract class AbstractExtendedUser extends AbstractBaseUser implements EncoderA
     protected string $encoder = 'default';
 
     /**
-     * @var string
+     * @var string|null
      * @ORM\Column(type="string")
      */
-    protected string $password;
+    protected ?string $password = null;
 
     /**
      * @var bool
@@ -30,7 +30,7 @@ abstract class AbstractExtendedUser extends AbstractBaseUser implements EncoderA
      * @var \DateTime|null
      * @ORM\Column(type="date")
      */
-    protected ?\DateTime $lastLogin;
+    protected ?\DateTime $lastLogin = null;
 
     /**
      * @return string
@@ -57,17 +57,17 @@ abstract class AbstractExtendedUser extends AbstractBaseUser implements EncoderA
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getPassword(): string
+    public function getPassword(): ?string
     {
         return $this->password;
     }
 
     /**
-     * @param string $password
+     * @param string|null $password
      */
-    public function setPassword(string $password): void
+    public function setPassword(?string $password): void
     {
         $this->password = $password;
     }
