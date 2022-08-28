@@ -26,6 +26,6 @@ trait AuthenticationTestFunctionsTrait
     {
         self::assertArrayHasKey('iat', $payload);
         self::assertArrayHasKey('exp', $payload);
-        self::assertEquals($payload['iat'] + self::$container->getParameter('jwt_token_ttl'), $payload['exp']);
+        self::assertEquals($payload['iat'] + self::$container->getParameter('lexik_jwt_authentication.token_ttl'), $payload['exp']);
     }
 }
