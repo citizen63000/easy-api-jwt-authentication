@@ -16,7 +16,7 @@
   ],
   "require": {
     "php": ">=7.4.3",
-    "citizen63000/easy-api-bundle": "dev-flex_test",
+    "citizen63000/easy-api-bundle": "dev-master",
     "gesdinet/jwt-refresh-token-bundle": "^1.1"
   },
   "require-dev": {
