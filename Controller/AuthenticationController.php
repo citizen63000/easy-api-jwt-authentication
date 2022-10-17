@@ -2,13 +2,13 @@
 
 namespace EasyApiJwtAuthentication\Controller;
 
-use EasyApiBundle\Services\User\UserManager;
 use EasyApiBundle\Controller\AbstractApiController;
+use EasyApiJwtAuthentication\Services\User\UserManager;
+use OpenApi\Annotations as OA;
 use Symfony\Component\HttpFoundation\Response;
-use Swagger\Annotations as SWG;
 
 /**
- * @SWG\Tag(name="Authentication")
+ * @OA\Tag(name="Authentication")
  */
 class AuthenticationController extends AbstractApiController
 {
