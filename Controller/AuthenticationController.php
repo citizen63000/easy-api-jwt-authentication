@@ -20,11 +20,11 @@ class AuthenticationController extends AbstractApiController
     /**
      * User logout.
      *
-     * @SWG\Response(response=200, description="Successful operation"),
-     * @SWG\Response(response="401", ref="#/definitions/401"),
-     * @SWG\Response(response="403", ref="#/definitions/403"),
-     * @SWG\Response(response="415", ref="#/definitions/415"),
-     * @SWG\Response(response="422", ref="#/definitions/422")
+     * @OA\Response(response=200, description="Successful operation"),
+     * @OA\Response(response="401", ref="#/definitions/401"),
+     * @OA\Response(response="403", ref="#/definitions/403"),
+     * @OA\Response(response="415", ref="#/definitions/415"),
+     * @OA\Response(response="422", ref="#/definitions/422")
      *
      * @return Response
      */
