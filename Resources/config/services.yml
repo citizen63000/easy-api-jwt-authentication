@@ -7,7 +7,7 @@ services:
   # JWT AUTHENTICATION_SUCCESS - Success login
   app.event.jwt_authentication_success_listener:
     class: EasyApiJwtAuthentication\EventListener\JWTAuthenticatedListener
-    arguments: ['@doctrine.orm.entity_manager', '@router.request_context', '@request_stack', '%jwt_token_ttl%', '@service_container', '@security.encoder_factory']
+    arguments: ['@doctrine.orm.entity_manager', '@router.request_context', '@request_stack', '%lexik_jwt_authentication.token_ttl%', '@service_container', '@security.encoder_factory']
     tags:
       - { name: kernel.event_listener, event: lexik_jwt_authentication.on_authentication_success, method: onAuthenticationSuccessResponse }
 
