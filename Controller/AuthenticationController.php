@@ -6,12 +6,23 @@ use EasyApiBundle\Controller\AbstractApiController;
 use EasyApiJwtAuthentication\Services\User\UserManager;
 use OpenApi\Annotations as OA;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\Session;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 
 /**
  * @OA\Tag(name="Authentication")
  */
 class AuthenticationController extends AbstractApiController
 {
+    protected TokenStorageInterface $tokenStorage;
+    protected Session $session;
+
+    public function __construct(TokenStorageInterface $tokenStorage, Session $session)
+    {
+        $this->tokenStorage = $tokenStorage;
+        $this->session = $session;
+    }
+
     public function authenticateAction()
     {
 
@@ -28,8 +39,8 @@ class AuthenticationController extends AbstractApiController
      */
     public function logoutAction(): Response
     {
-        $this->get('security.token_storage')->setToken();
-        $this->get('session')->invalidate();
+        $this->tokenStorage->setToken();
+        $this->session->invalidate();
 
         return $this->renderResponse(null, Response::HTTP_NO_CONTENT);
     }
