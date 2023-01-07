@@ -11,7 +11,7 @@ trait AuthenticationTestTrait
 
     protected static $authenticateRouteName = 'api_login';
     protected static $refreshTokenRouteName = 'gesdinet_jwt_refresh_token';
-    protected static $logoutRouteName = 'api_logout';
+    protected static $logoutRouteName = 'authentication_logout';
 
     protected static function initExecuteSetupOnAllTest()
     {
