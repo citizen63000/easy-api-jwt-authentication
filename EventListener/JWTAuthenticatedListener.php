@@ -3,7 +3,6 @@
 namespace EasyApiJwtAuthentication\EventListener;
 
 use EasyApiBundle\Entity\User\AbstractUser as User;
-use EasyApiBundle\Services\User\Tracking;
 use Lexik\Bundle\JWTAuthenticationBundle\Event\AuthenticationSuccessEvent;
 
 class JWTAuthenticatedListener
@@ -27,13 +26,5 @@ class JWTAuthenticatedListener
 //            $manager->delete($refreshToken);
 //        }
 
-        if ($this->container->getParameter(Tracking::TRACKING_ENABLE_PARAMETER)) {
-            $trackingService = $this->container->get('app.user.tracking');
-            $trackingService->logConnection(
-                $user,
-                $this->requestStack->getCurrentRequest(),
-                $trackingService->getTokenIdentifier($event->getData()['token'])
-            );
-        }
     }
 }
