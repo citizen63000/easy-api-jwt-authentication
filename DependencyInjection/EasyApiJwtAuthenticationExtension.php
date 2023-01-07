@@ -7,7 +7,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
-class EasyApiJwtExtension extends Extension
+class EasyApiJwtAuthenticationExtension extends Extension
 {
     /**
      * {@inheritDoc}
