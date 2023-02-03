@@ -121,7 +121,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/citizen63000/easy-api-bundle.git",
-                "reference": "cb257b85756d6cc5a295b40afee23f29e0a93551"
+                "reference": "bdff909242fe5eb4a754339f58f85a196d140604"
             },
             "require": {
                 "doctrine/annotations": "^1.13",
@@ -191,7 +191,7 @@
                 "api",
                 "rest"
             ],
-            "time": "2023-01-25T19:03:44+00:00"
+            "time": "2023-02-03T18:06:26+00:00"
         },
         {
             "name": "doctrine/annotations",
