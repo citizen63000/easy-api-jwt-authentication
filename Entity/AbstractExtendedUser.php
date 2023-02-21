@@ -28,7 +28,7 @@ abstract class AbstractExtendedUser extends AbstractUser implements EncoderAware
 
     /**
      * @var \DateTime|null
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="date", nullable=true)
      */
     protected ?\DateTime $lastLogin = null;
 
