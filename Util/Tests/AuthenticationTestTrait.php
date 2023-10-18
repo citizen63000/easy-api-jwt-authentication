@@ -51,10 +51,10 @@ trait AuthenticationTestTrait
         $apiOutput = self::httpPost(['name' => static::$authenticateRouteName], $params, false);
         static::assertEquals(Response::HTTP_OK, $apiOutput->getStatusCode());
         $result = $apiOutput->getData();
-        self::arrayHasKey('refreshToken', $result);
+        self::arrayHasKey('refresh_token', $result);
 
         // test refreshToken route
-        $apiOutput = self::httpPost(['name' => static::$refreshTokenRouteName], ['refreshToken' => $result['refresh_token']], false);
+        $apiOutput = self::httpPost(['name' => static::$refreshTokenRouteName], ['refresh_token' => $result['refresh_token']], false);
         static::assertEquals(Response::HTTP_OK, $apiOutput->getStatusCode());
         self::checkAuthenticateResponse($apiOutput->getData());
     }
