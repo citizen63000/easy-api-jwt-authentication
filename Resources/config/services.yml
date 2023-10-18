@@ -4,27 +4,6 @@ services:
     autoconfigure: true
     public: false
 
-  # JWT AUTHENTICATION_SUCCESS - Success login
-  app.event.jwt_authentication_success_listener:
-    class: EasyApiJwtAuthentication\EventListener\JWTAuthenticatedListener
-    arguments: ['@doctrine.orm.entity_manager', '@router.request_context', '@request_stack', '%lexik_jwt_authentication.token_ttl%', '@service_container', '@security.encoder_factory']
-    tags:
-      - { name: kernel.event_listener, event: lexik_jwt_authentication.on_authentication_success, method: onAuthenticationSuccessResponse }
-
-  app.jwt_authentication.jws_provider:
-    class: EasyApiJwtAuthentication\Services\JWS\JWSProvider
-    public: true
-    arguments:
-      - '@lexik_jwt_authentication.key_loader'
-      - '%lexik_jwt_authentication.encoder.crypto_engine%'
-      - '%lexik_jwt_authentication.encoder.signature_algorithm%'
-      - '%lexik_jwt_authentication.token_ttl%'
-      - '%jwt_token_authorization_header_prefix%'
-      - '@security.token_storage'
-      - '@doctrine.orm.entity_manager'
-      - '%easy_api.user_class%'
-      - '%lexik_jwt_authentication.user_identity_field%'
-
   EasyApiJwtAuthentication\Services\User\UserManager:
     public: true
     arguments: ['@service_container', '@security.token_storage', '@gesdinet.jwtrefreshtoken.send_token']
@@ -32,8 +11,3 @@ services:
   EasyApiJwtAuthentication\Controller\AuthenticationController:
     public: true
     tags: [ 'controller.service_arguments']
-
-#  EasyApiJwtAuthentication\Controller\AuthenticationController:
-#    public: true
-#    arguments: ['@security.token_storage', '@request_stack']
-#    tags: ['controller.service_arguments']
