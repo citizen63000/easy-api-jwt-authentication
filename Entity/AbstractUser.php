@@ -3,16 +3,16 @@
 namespace EasyApiJwtAuthentication\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use EasyApiBundle\Entity\User\AbstractUser;
-use Symfony\Component\Security\Core\Encoder\EncoderAwareInterface;
+use EasyApiBundle\Entity\User\AbstractUser as AbstractBaseUser;
+use Symfony\Component\PasswordHasher\Hasher\PasswordHasherAwareInterface;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 
-abstract class AbstractExtendedUser extends AbstractUser implements EncoderAwareInterface
+abstract class AbstractUser extends AbstractBaseUser implements PasswordHasherAwareInterface, PasswordAuthenticatedUserInterface
 {
     /**
-     * @var string
      * @ORM\Column(type="string")
      */
-    protected string $encoder = 'default';
+    protected ?string $passwordHasherName = null;
 
     /**
      * @var string|null
@@ -33,27 +33,20 @@ abstract class AbstractExtendedUser extends AbstractUser implements EncoderAware
     protected ?\DateTime $lastLogin = null;
 
     /**
-     * @return string
+     * @see PasswordHasherAwareInterface
+     * @return string|null
      */
-    public function getEncoder(): string
+    public function getPasswordHasherName(): ?string
     {
-        return $this->encoder;
+        return $this->passwordHasherName;
     }
 
     /**
-     * @param string $encoder
+     * @param string|null $passwordHasherName
      */
-    public function setEncoder(string $encoder)
+    public function setPasswordHasherName(?string $passwordHasherName): void
     {
-        $this->encoder = $encoder;
-    }
-
-    /**
-     * @return string
-     */
-    public function getEncoderName(): string
-    {
-        return $this->encoder;
+        $this->passwordHasherName = $passwordHasherName;
     }
 
     /**
