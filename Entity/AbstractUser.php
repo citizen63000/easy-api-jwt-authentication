@@ -10,7 +10,7 @@ use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 abstract class AbstractUser extends AbstractBaseUser implements PasswordHasherAwareInterface, PasswordAuthenticatedUserInterface
 {
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     protected ?string $passwordHasherName = null;
 
