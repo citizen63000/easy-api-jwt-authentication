@@ -6,7 +6,7 @@ services:
 
   EasyApiJwtAuthentication\Services\User\UserManager:
     public: true
-    arguments: ['@service_container', '@security.token_storage', '@gesdinet.jwtrefreshtoken.send_token']
+    arguments: ['@service_container', '@security.token_storage', '@gesdinet_jwt_refresh_token.refresh_token_manager']
 
   EasyApiJwtAuthentication\Controller\AuthenticationController:
     public: true

@@ -15,13 +15,11 @@ use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInt
 #[Route(path: '/', name: 'authentication')]
 class AuthenticationController extends AbstractApiController
 {
-    protected TokenStorageInterface $tokenStorage;
-
-    public function __construct(TokenStorageInterface $tokenStorage)
+    public function __construct(protected TokenStorageInterface $tokenStorage, protected UserManager $userManager)
     {
-        $this->tokenStorage = $tokenStorage;
     }
 
+//    #[Route(path: '/authenticate', name: '_authenticate', methods: ['POST'])]
     public function authenticateAction()
     {
     }
@@ -38,13 +36,5 @@ class AuthenticationController extends AbstractApiController
         $this->tokenStorage->setToken();
 
         return $this->renderResponse(null, Response::HTTP_NO_CONTENT);
-    }
-
-    /**
-     * Add dynamically Filter service.
-     */
-    public static function getSubscribedServices(): array
-    {
-        return array_merge(parent::getSubscribedServices(), ['app.user.manager' => UserManager::class]);
     }
 }
