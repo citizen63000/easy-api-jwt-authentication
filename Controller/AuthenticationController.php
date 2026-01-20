@@ -19,11 +19,6 @@ class AuthenticationController extends AbstractApiController
     {
     }
 
-//    #[Route(path: '/authenticate', name: '_authenticate', methods: ['POST'])]
-    public function authenticateAction()
-    {
-    }
-
     /**
      * User logout.
      * @OA\Response(response="200", description="Successful operation"),
