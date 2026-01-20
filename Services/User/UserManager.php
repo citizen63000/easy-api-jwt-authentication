@@ -3,6 +3,7 @@
 namespace EasyApiJwtAuthentication\Services\User;
 
 use EasyApiBundle\Services\AbstractService;
+use Gesdinet\JWTRefreshTokenBundle\Model\RefreshTokenManagerInterface;
 use Lexik\Bundle\JWTAuthenticationBundle\Event\AuthenticationSuccessEvent;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -29,10 +30,6 @@ class UserManager extends AbstractService
     {
         // Generate new Token
         $jwtToken = $this->get('app.jwt_authentication.jws_provider')->generateTokenByUser($user);
-
-        // Generate Refresh token
-//        $event = new AuthenticationSuccessEvent(['token' => $jwtToken->getToken()], $user, new Response());
-//        $this->sendTokenService->attachRefreshToken($event);
 
         $refreshToken = $this->refreshTokenManager->create();
         $refreshToken->setUsername($user->getUsername());
