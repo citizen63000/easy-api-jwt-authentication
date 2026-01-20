@@ -12,7 +12,7 @@
   "require": {
     "php": "^8.3",
     "citizen63000/easy-api-bundle": "dev-master|^4.0.1",
-    "gesdinet/jwt-refresh-token-bundle": "^1.1"
+    "gesdinet/jwt-refresh-token-bundle": "^2.0.0-beta"
   },
   "require-dev": {
     "citizen63000/easy-api-tests": "dev-main|^3.0",
