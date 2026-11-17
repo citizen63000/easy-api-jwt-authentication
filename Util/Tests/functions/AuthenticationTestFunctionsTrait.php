@@ -2,12 +2,12 @@
 
 namespace EasyApiJwtAuthentication\Util\Tests\functions;
 
-use EasyApiTests\crud\functions\crudFunctionsTestTrait;
+use EasyApiTests\crud\functions\CrudFunctionsTestTrait;
 use Namshi\JOSE\JWS;
 
 trait AuthenticationTestFunctionsTrait
 {
-    use crudFunctionsTestTrait;
+    use CrudFunctionsTestTrait;
 
     /**
      * @param array $response
