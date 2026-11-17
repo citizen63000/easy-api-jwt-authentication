@@ -2,7 +2,7 @@
 
 namespace EasyApiJwtAuthentication\Util\Tests\functions;
 
-use EasyApiTests\crud\functions\CrudFunctionsTestTrait;
+use EasyApiTests\Crud\Functions\CrudFunctionsTestTrait;
 use Namshi\JOSE\JWS;
 
 trait AuthenticationTestFunctionsTrait
